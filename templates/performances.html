@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<br>
+<br>
+<br>
+<div class="container" style="text-align: center;">
+    <div class="container">
+      <div class="section-title text-center">
+          <h2>Players with their scores</h2>
+      </div>
+    </div>
+    <table class="table" style="text-align: center;" >
+    <thead style="text-align: center;">
+        <tr style="text-align: center;">
+          <th><h4>Number</h4></th>
+          <th><h4>Player Name</h4></th>
+          <th><h4>Runs</h4></th>
+          <th><h4>Catches</h4></th>
+          <th><h4>Wickets</h4></th>
+          <th><h4>Score</h4></th>
+        </tr>
+      </thead>
+      <tbody style="text-align: center;">
+         {% for i in performances %}
+        <tr>
+              <td><p style="font-size:14px;">{{ forloop.counter }}</p></td>
+              <td><p style="font-size:14px;">{{ i.name }} {%if i.id == captain%}<span style="color:saddlebrown"><b>(c)</b></span>{% endif %} </p></td>
+              <td><p style="font-size:14px;">{{ i.runs }}</p></td>
+              <td><p style="font-size:14px;">{{ i.catches }}</p></td>
+              <td><p style="font-size:14px;">{{ i.wickets }}</p></td>
+              <td><p style="font-size:14px;">{{ i.score }}</p></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+        </div>
+
+
+
+{% endblock %}

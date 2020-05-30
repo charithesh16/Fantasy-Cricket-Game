@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<br>
+<br>
+<br>
+<div class="container" style="text-align: center;">
+    <div class="container">
+      <div class="section-title text-center">
+          <h2>Top users with Maximum stars</h2>
+      </div>
+    </div>
+    <table class="table" style="text-align: center;" >
+    <thead style="text-align: center;">
+        <tr style="text-align: center;">
+          <th><h4>Rank</h4></th>
+          <th><h4>Username</h4></th>
+          <th><h4>Stars Earned</h4></th>
+        </tr>
+      </thead>
+      <tbody style="text-align: center;">
+         {% for i in userTeamList %}
+        <tr>
+              <td><p style="font-size:14px;">{{ forloop.counter }}</p></td>
+              <td><p style="font-size:14px;">{{ i.name }}</p></td>
+              <td><p style="font-size:14px;">{{ i.stars }}</p></td>
+          
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+        </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,188 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="wow fadeIn">
+    <div class="hero-container">
+      <h1>Welcome to Yorking</h1>
+       <img src="{% static 'img/hero-img.png' %}" alt="Hero Imgs">
+      <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+  <div class="section-title text-center">
+          <h2>Create your team, compete with users and score BIG!</h2>
+          <p class="separator">Play now!</p>
+  </div>
+
+    <!-- ======= Features Section ======= -->
+    <section id="rules" class="padd-section text-center wow fadeInUp">
+
+<!-- TEAM SELECTION RULES -->
+      <div class="container">
+        <div class="section-title text-center">
+          <h2>Rules</h2>
+          <p class="separator"><h4>Team selection rules</h4></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/paint-palette.png' %}" alt="img" class="img-fluid">
+              <h4>Batsman</h4>
+              <p>User's team must cantain atleast "<b>4</b>" Batsmen.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/vector.png' %}" alt="img" class="img-fluid">
+              <h4>Bowler</h4>
+              <p>User's team must cantain atleast "<b>3</b>" Bowlers.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/design-tool.png' %}" alt="img" class="img-fluid">
+              <h4>All-Rounder</h4>
+              <p>User's team must cantain atleast "<b>1</b>" All-Rounder.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/asteroid.png' %}" alt="img" class="img-fluid">
+              <h4>Wicket-Keeper</h4>
+              <p>User's team must cantain atleast "<b>1</b>" Wicket-Keeper.</p>
+            </div>
+          </div>
+<br>
+<!-- POINTS SYSTEM -->
+          <div class="container">
+        <div class="section-title text-center">
+          <p class="separator"><h4>Points System</h4></p>
+        </div>
+      </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/a1.png' %}" alt="img" class="img-fluid">
+              <h4>Points for Runs</h4>
+              <p>User will be awarded "<b>1</b>" point for each run if the player is included in the user's team.</p>
+            </div>
+          </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/pixel.png' %}" alt="img" class="img-fluid">
+              <h4>Points for Catch</h4>
+              <p>User will be awarded "<b>10</b>" point for each run if the player is included in the user's team.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/cloud-computing.png' %}" alt="img" class="img-fluid">
+              <h4>Points for Wickets</h4>
+              <p>User will be awarded "<b>20</b>" point for each wicket if the player is included in the user's team.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/code.png' %}" alt="img" class="img-fluid">
+              <h4>Points for Captain</h4>
+              <p>User will be awarded "<b>Double</b>" point for each run if the player is included in the user's team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+    
+    <!-- ======= Newsletter Section ======= -->
+    <section id="newsletter" class="newsletter text-center wow fadeInUp">
+      <div class="overlay padd-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-6">
+              <form class="form-inline" method="POST" action="#">
+                <input type="email" class="form-control " placeholder="Email Adress" name="email">
+                <button type="submit" class="btn btn-default"><i class="fa fa-location-arrow"></i>Subscribe</button>
+              </form>
+            </div>
+          </div>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </section><!-- End Newsletter Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="padd-section wow fadeInUp">
+      <div class="container">
+        <div class="section-title text-center">
+          <h2>Contact</h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-4">
+            <div class="info">
+              <div class="email">
+                <i class="fa fa-envelope"></i>
+                <p>info@yorking.com</p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validate"></div>
+                </div>
+                <div class="mb-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+  </main><!-- End #main -->
+{% endblock %}

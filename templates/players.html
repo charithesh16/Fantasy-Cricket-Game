@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<br>
+<br>
+<br>
+    <div class="container">
+    	<div class="row">
+          <div class="section-title text-center col-12 col-md-9">
+              <h2>Choose your players now!</h2>
+          </div>
+          <div class="col-12 col-md-3">
+          	<h3 style="color:green; font-family:sans-serif; text-transform: uppercase">Points : <b> <div id="remaining_points" style="display:inline; color: black"></b></div></h3>
+          </div>
+      </div>
+    </div>
+    <div class="container">
+    <div class="col-12" "display=inline-center">
+    {% if error %}
+    <ul style="column-count: 2; column-gap: 5rem; list-style: none;"><i>
+			{% for i in error_msg %}
+				<h3 style="color:saddlebrown;font-family: open sans"> {{i}}</h3>
+			{% endfor  %}</i></ul>
+			{% endif %} 
+    </div>
+    </div>
+<div class="container mt-5">
+<form action="{%url 'user_team'%}" method="POST" id="myform" id = "tblFruits">
+{%csrf_token%}
+<div class="c">
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">Batsmen
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in batsmen %}
+                        <li>
+                            <label class="c">
+                            	<input type="checkbox" name="batsmen" value="{{i.pid}}" id="{{i.pid}}"onclick="load_points({{i.pid}})"/>
+                            	<label for="{{i.pid}}"/>{{ i.name }} : {{ i.points }}</label><br/>
+                            
+                            <span class="checkmark"></span>
+                            
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">Bowlers
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in bowler %}
+                        <li>
+                            <label class="c">
+                            	<input type="checkbox" name="bowler" value="{{i.pid}}" id="{{i.pid}}"onclick="load_points({{i.pid}})"/>
+                            	<label for="{{i.pid}}"/>{{ i.name }} : {{ i.points }}</label><br/>
+                            
+                            <span class="checkmark"></span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">All-rounders
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in all_rounder %}
+                        <li>
+                            <label class="c">
+                            	<input type="checkbox" name="all_rounder" value="{{i.pid}}" id="{{i.pid}}"onclick="load_points({{i.pid}})"/>
+                            	<label for="{{i.pid}}"/>{{ i.name }} : {{ i.points }}</label><br/>
+                            
+                            <span class="checkmark"></span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">Wicket-Keepers
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in wicket_keeper %}
+                        <li>
+                            <label class="c">
+                            	<input type="checkbox" name="wicket_keeper" value="{{i.pid}}" id="{{i.pid}}"onclick="load_points({{i.pid}})"/>
+                            	<label for="{{i.pid}}"/>{{ i.name }} : {{ i.points }}</label><br/>
+                            
+                            <span class="checkmark"></span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <!-- <span id="spnError" class="error" style="display: none">Please select 11 Players.</span> -->
+    <!-- <br> -->
+    <div class="container h-100">
+        <div class="d-flex h-100"> 
+         <div class="align-self-center mx-auto"> 
+                <button type="Submit" class="btn btn-success" id = "btnSubmit"> 
+                  Save
+                </button> 
+            </div> 
+          </div>
+        </div>
+        <!-- <input type="button" value="Submit" id = "btnSubmit" /> -->
+</form>
+</div>
+
+
+
+		<script >
+			$(document).ready( function() {
+				document.getElementById('remaining_points').innerHTML = {{points}};
+			} )
+			// var updated_points;
+			function load_points(id){
+				console.log("In function");
+				// $.ajaxSetup({ cache: false });
+				var updated_points = document.getElementById('remaining_points').value;
+				// alert(updated_points);
+				console.log(document.getElementById(id).checked);
+				if(document.getElementById(id).checked){
+				$('#remaining_points').load("{% url 'get_points' %}",{'id':id,'points':updated_points,'checked':1});	
+				}
+				else{
+				$('#remaining_points').load("{% url 'get_points' %}",{'id':id,'points':updated_points,'checked':0});
+			}
+		}
+		</script>
+{% endblock %}

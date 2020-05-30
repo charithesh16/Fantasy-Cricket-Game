@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="container">
+    <div class="section-title text-center">
+        <h2>Check your ranking for the previous Matches!</h2>
+    </div>
+  </div> 
+  <table class="table" style="text-align: center;">
+    <!--Table head -->
+    <thead>
+      <tr>
+        <th><h4>Match ID</h4></th>
+        <th><h4>Country-1</h4></th>
+        <th><h4>Country-2</h4></th>
+        <th><h4>Details</h4></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for i in matches %}
+          <tr>
+              <td><p style="font-size:14px;">{{ forloop.counter }}</p></td>
+              <td><p style="font-size:14px;">{{ i.coun1 }}</p></td>
+              <td><p style="font-size:14px;">{{ i.coun2 }}</p></td>
+              <td><p style="font-size:14px;"><a href="{%url 'leaderboard' i.matchid %}">Click Here</a></p></td>
+        </tr>
+        {% endfor %}
+      </tr>
+      
+    </tbody>
+    </table>
+    </div>
+
+
+{% endblock %}

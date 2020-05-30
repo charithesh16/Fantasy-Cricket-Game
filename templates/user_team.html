@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<br>
+<br>
+<br>
+    <div class="container">
+      <div class="section-title text-center">
+          <h2>Your selected players!</h2>
+      </div>
+      <div class="section-title text-center">
+          <h3 style="font-family: open sans">    Choose captain</h3>
+      </div>
+    </div>  
+<div class="container">
+<form action="{% url 'dashboard'%}" method="POST" id="myform" id = "tblFruits">
+	{%csrf_token%}
+    <div class = "c">
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">Batsmen
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in batsmen %}
+                        <li>
+                            <label class="c">
+                            <input type="radio" name="captain" value="{{i.pid}}">
+                            <label for="{{i.pid}}"/>{{ i.name }} : {{ i.points }}</label><br/>
+                            <span class="checkmark"></span>
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">Bowlers
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in bowler %}
+                        <li>
+                            <label class="c">
+                            <input type="radio" name="captain" value="{{i.pid}}">
+                            <label for="{{i.pid}}"/>{{ i.name }} : {{ i.points }}</label><br/>
+                            <span class="checkmark"></span>
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">All-rounders
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in all_rounder %}
+                        <li>
+                            <label class="c">
+                            <input type="radio" name="captain" value="{{i.pid}}">
+                            <label for="{{i.pid}}"/>{{ i.name }} : {{ i.points }}</label><br/>
+                            <span class="checkmark"></span>
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">Wicket-Keepers
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in wicket_keeper %}
+                        <li>
+                            <label class="c">
+                            <input type="radio" name="captain" value="{{i.pid}}">
+                            <label for="{{i.pid}}"/>{{ i.name }} : {{ i.points }}</label><br/>
+                            <span class="checkmark"></span>
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <!-- <span id="spnError" class="error" style="display: none">Please select 11 Players.</span> -->
+    <!-- <br> -->
+    <div class="container h-100">
+        <div class="d-flex h-100"> 
+         <div class="align-self-center mx-auto"> 
+                <button type="submit" class="btn btn-success" id = "btnSubmit"> 
+                  Save
+                </button> 
+            </div> 
+          </div>
+        </div>
+        <!-- <input type="button" value="Submit" id = "btnSubmit" /> -->
+</form>
+</div>
+
+
+{% endblock %}

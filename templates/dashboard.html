@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<br>
+<br>
+<br>
+    <div class="container">
+    	<div class="row">
+          <div class="section-title text-center col-12 col-md-9 m-auto">
+              <h2>Your players!</h2>
+          </div>
+      </div>
+    </div>
+<div class="container mt-5">
+<div class="c">
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">Batsmen
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in batsmen %}
+                        <li>
+                            <label class="c">
+                            	<label/>{{i.name}}</label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">Bowlers
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in bowler %}
+                        <li>
+                            <label class="c">
+                                <label>{{i.name}}</label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">All-rounders
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in all_rounder %}
+                        <li>
+                            <label class="c">
+                                <label>{{i.name}}</label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center; color: green; text-transform: uppercase; font-size:30px;">Wicket-Keepers
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <ul style="column-count: 3; column-gap: 7rem; list-style: none;">
+                    {% for i in wicket_keeper %}
+                        <li>
+                            <label class="c">
+                                <label>{{i.name}}</label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <!-- <span id="spnError" class="error" style="display: none">Please select 11 Players.</span> -->
+    <!-- <br> -->
+        <!-- <input type="button" value="Submit" id = "btnSubmit" /> -->
+</div>
+
+{% endblock %}

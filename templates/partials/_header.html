@@ -1,0 +1,51 @@
+    <!-- ======= Header ======= -->
+    <header id="header" class="header header-hide">
+        <div class="container">
+    
+          <div id="logo" class="pull-left">
+            <h1><a href="{% url 'home' %}" class="scrollto">Yorking</a></h1>
+          </div>
+    
+          <nav id="nav-menu-container">
+            <ul class="nav-menu">
+              <li 
+              {% if '/' == request.path  %}
+                class="menu-active"
+              {% else %}
+                class="menu"
+              {% endif%}><a href="{% url 'home' %}">Home</a></li>
+              <li 
+              {% if 'rules' in request.path  %}
+                class="menu-active"
+              {% else %}
+                class="menu"
+              {% endif%}><a href="#rules">Rules</a></li>
+              <li 
+              {% if 'playerdashboard' in request.path  %}
+                class="menu-active"
+              {% else %}
+                class="menu"
+              {% endif%}><a href="{% url 'players_dashboard' %}">Player Dashboard</a></li>
+              <li 
+              {% if 'leaderboard' in request.path  %}
+                class="menu-active"
+              {% else %}
+                class="menu"
+              {% endif%}><a href="{% url 'matchlist' %}">Leaderboard</a></li>
+              <li 
+              {% if 'createteam' in request.path  %}
+                class="menu-active"
+              {% else %}
+                class="menu"
+              {% endif%}><a href="{% url 'select_team'%}">Create Team</a></li>
+              <li 
+              {% if 'profile' in request.path  %}
+                class="menu-active"
+              {% else %}
+                class="menu"
+              {% endif%}><a href="{% url 'profile' %}">Profile</a></li>
+              <!-- <li><a href="#contact">Contact</a></li> -->
+            </ul>
+          </nav><!-- #nav-menu-container -->
+        </div>
+      </header><!-- End Header -->

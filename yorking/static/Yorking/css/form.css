@@ -1,0 +1,64 @@
+
+/* Resizing the image */
+img
+{
+  width:50%;
+  height: 50%
+}
+
+/* Adjusting the space between each entry */
+
+.margin-bottom
+{
+  margin-bottom:17px;
+}
+
+/* Positioning the animated image */
+.relative
+{
+  position: relative;
+  left: 100px;
+}
+
+/* Splitting the Screen */
+.split
+{
+  height: 100%;
+  width: 50%;
+  position: fixed;
+}
+.left
+{
+  left: 0;
+}
+.right
+{
+  right: 0;
+}
+
+/* LABEL */
+label
+{
+  font-size: 30px;
+}
+
+/* SUBMIT BUTTON */
+.button
+{
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 12px;
+  /* display: inline-block; */
+}
+
+/* INPUT TEXT BOX */
+.textbox
+{
+  height: 50px;
+  font-size: 40px;
+}
+
+#submit{}
+
+#selection{}

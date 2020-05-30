@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="container">
+    <div class="section-title text-center">
+        <h2 style="color: #71C55D;font-weight: 400;">Hello {{name}}! </h2>
+        <br/>
+        <h2>Your previous matches</h2>
+
+    </div>
+  </div>  
+<table class="table" style="text-align: center;">
+  <!--Table head -->
+  <thead>
+    <tr>
+      <th><h4>Match ID</h4></th>
+      <th><h4>Country-1</h4></th>
+      <th><h4>Country-2</h4></th>
+      <th><h4>Your score</h4></th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for match in matches %}
+  	<tr>
+  		<td><p style="font-size:14px;">{{forloop.counter}}</p></td>
+  		<td><p style="font-size:14px;">{{match.coun1}}</p></td>
+  		<td><p style="font-size:14px;">{{match.coun2}}</p></td>
+  		<td><p style="font-size:14px;">{{match.stars}}</p></td>
+  	</tr>
+  	{% endfor %}
+
+  </tbody>
+  </table>
+  </div>
+{% endblock %}
